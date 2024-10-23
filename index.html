@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <style>
+        /* Modal Styles */
+        .modal {
+            display: none; /* Hidden by default */
+            position: fixed; /* Stay in place */
+            z-index: 1; /* Sit on top */
+            left: 0;
+            top: 0;
+            width: 100%; /* Full width */
+            height: 100%; /* Full height */
+            overflow: auto; /* Enable scroll if needed */
+            background-color: rgb(0,0,0); /* Fallback color */
+            background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+        }
+        .modal-content {
+            background-color: #fefefe;
+            margin: 15% auto; /* 15% from the top and centered */
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%; /* Could be more or less, depending on screen size */
+        }
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        .project-images {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .project-images img {
+            width: 30%; /* Adjust this to change image size */
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <a href="#" class="logo">Gilang.</a>
+        <nav class="navbar">
+            <a href="#home" class="active">Home</a>
+            <a href="#about">About</a>
+            <a href="#services">Services</a>
+            <a href="#portfolio">Portfolio</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <section id="home" class="home">
+        <div class="home-content">
+            <h1>Hi, I'm Gilang Ardhi Maulana</h1>
+            <h3>Frontend Developer</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad rem doloribus totam praesentium vel corporis exercitationem dolore nulla. Sint provident, cum ratione accusamus assumenda animi enim ipsa?</p>
+            <div class="btn-box">
+                <a href="#contact">Hire Me</a>
+                <a href="#contact">Let's Talk</a>
+            </div>
+        </div>
+
+        <div class="home-sci">
+            <a href="#"><i class='bx bxl-facebook'></i></a>
+            <a href="#"><i class='bx bxl-tiktok'></i></a>
+            <a href="#"><i class='bx bxl-instagram'></i></a>
+        </div>
+
+        <img src="gilang.jpg" alt="gilang">
+    </section>
+
+    <section id="about" class="about">
+        <div class="about-content">
+            <h2>About Me</h2>
+            <p>Hi, I'm Gilang Ardhi Maulana, a passionate Frontend Developer with experience in creating dynamic and responsive websites. I enjoy transforming ideas into reality through code. My goal is to build websites that are both functional and aesthetically pleasing.</p>
+            <div class="skills">
+                <h3>Skills</h3>
+                <ul>
+                    <li>HTML & CSS</li>
+                    <li>JavaScript</li>
+                    <li>PHP</li>
+                    <li>Bootstrap</li>
+                    <li>UI/UX Design</li>
+                </ul>
+            </div>
+        </div>
+        <div class="about-img">
+            <img src="gilang.jpg" alt="Gilang Ardhi M">
+        </div>
+    </section>
+
+    <section id="services" class="services">
+        <h2>My Services</h2>
+        <div class="service-container">
+            <div class="service-box">
+                <i class='bx bx-code-alt'></i>
+                <h3>Web Development</h3>
+                <p>I build responsive, fast, and accessible websites with clean code and modern technologies.</p>
+            </div>
+            <div class="service-box">
+                <i class='bx bx-paint'></i>
+                <h3>UI/UX Design</h3>
+                <p>I design user-friendly interfaces that provide a seamless user experience, blending aesthetics with functionality.</p>
+            </div>
+            <div class="service-box">
+                <i class='bx bx-mobile-alt'></i>
+                <h3>Mobile Responsive Design</h3>
+                <p>Ensuring your website looks great on all devices, from desktops to mobile phones, with a focus on responsive design.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="portfolio" class="portfolio">
+        <h2>My Portfolio</h2>
+        <div class="portfolio-container">
+            <div class="portfolio-box">
+                <img src="images/1,3.png" alt="Project 1">
+                <h3>Project 1</h3>
+                <p>Membangun platform e-commerce barang bekas dengan PHP dan Bootstrap, lengkap dengan katalog produk, sistem cart, manajemen pengguna, dan pembayaran, dengan fokus pada antarmuka ramah pengguna.</p>
+                <button class="btn" onclick="openModal('modal1')">View Project</button>
+            </div>
+            <div class="portfolio-box">
+                <img src="images/2,1.png" alt="Project 2">
+                <h3>Project 2</h3>
+                <p>Mengembangkan sistem CRUD untuk manajemen data anggota kelas dengan Laravel dan Bootstrap, mencakup fitur tambah, edit, lihat, dan hapus data, serta desain responsif menggunakan database MySQL.</p>
+                <button class="btn" onclick="openModal('modal2')">View Project</button>
+            </div>
+            <div class="portfolio-box">
+                <img src="images/3,1.png" alt="Project 3">
+                <h3>Project 3</h3>
+                <p>Merancang website toko buku online dengan Bootstrap, menyediakan katalog buku terstruktur, pencarian, dan checkout, serta desain responsif yang memudahkan pengguna dalam menjelajahi koleksi.</p>
+                <button class="btn" onclick="openModal('modal3')">View Project</button>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <h2>Contact Me</h2>
+        <div class="contact-container">
+            <div class="contact-info">
+                <h3>Get in Touch</h3>
+                <p>If you have any questions, feel free to send me a message. I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision.</p>
+                <p>Email: gilang@example.com</p>
+                <p>Phone: +123 456 789</p>
+            </div>
+            <form class="contact-form" action="send_email.php" method="POST">
+                <div class="input-box">
+                    <input type="text" name="name" required>
+                    <label for="name">Full Name</label>
+                </div>
+                <div class="input-box">
+                    <input type="email" name="email" required>
+                    <label for="email">Email</label>
+                </div>
+                <div class="input-box">
+                    <input type="text" name="subject" required>
+                    <label for="subject">Subject</label>
+                </div>
+                <div class="input-box">
+                    <textarea name="message" required></textarea>
+                    <label for="message">Message</label>
+                </div>
+                <button type="submit" class="btn">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Modal Structure -->
+    <div id="modal1" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('modal1')">&times;</span>
+            <h2>Project 1 Details</h2>
+            <div class="project-images">
+                <div>
+                    <img src="images/1,3.png" alt="Project 1 Detail 1">
+                    <div class="project-image-label">Halaman User</div>
+                </div>
+                <div>
+                    <img src="images/1,2.png" alt="Project 1 Detail 2">
+                    <div class="project-image-label">Halaman Admin</div>
+                </div>
+                <div>
+                    <img src="images/1,1.png" alt="Project 1 Detail 3">
+                    <div class="project-image-label">Halaman Seller</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div id="modal2" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('modal2')">&times;</span>
+            <h2>Project 2 Details</h2>
+            <div class="project-images">
+                <div>
+                    <img src="images/2,1.png" alt="Project 2 Detail 1">
+                    <div class="project-image-label">Menampilkan Data Siswa</div>
+                </div>
+                <div>
+                    <img src="images/2,2.png" alt="Project 2 Detail 2">
+                    <div class="project-image-label">Menambah Data Siswa</div>
+                </div>
+                <div>
+                    <img src="images/2,3.png" alt="Project 2 Detail 3">
+                    <div class="project-image-label">Edit Data Siswa</div>
+                </div>
+                <div>
+                    <img src="images/2,4.png" alt="Project 2 Detail 4">
+                    <div class="project-image-label">Detail Data Siswa</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div id="modal3" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('modal3')">&times;</span>
+            <h2>Project 3 Details</h2>
+            <div class="project-images">
+                <div>
+                    <img src="images/3,1.png" alt="Project 3 Detail 1">
+                    <div class="project-image-label">Halaman Bookstore</div>
+                </div>
+                <div>
+                    <img src="images/3,2.png" alt="Project 3 Detail 2">
+                    <div class="project-image-label">Menambah Data</div>
+                </div>
+                <div>
+                    <img src="images/3,3.png" alt="Project 3 Detail 3">
+                    <div class="project-image-label">Halaman Auth</div>
+                </div>
+            </div>
+        </div>
+    </div>
+   
+
+    <script>
+        const navbarLinks = document.querySelectorAll('.navbar a');
+
+        navbarLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                navbarLinks.forEach(nav => nav.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
+
+        // Modal Functions
+        function openModal(modalId) {
+            document.getElementById(modalId).style.display = "block";
+        }
+
+        function closeModal(modalId) {
+            document.getElementById(modalId).style.display = "none";
+        }
+
+        // Close modal when clicking outside of the modal content
+        window.onclick = function(event) {
+            const modals = document.querySelectorAll('.modal');
+            modals.forEach(modal => {
+                if (event.target == modal) {
+                    closeModal(modal.id);
+                }
+            });
+        };
+    </script>
+
+    <script src="script.js"></script>
+</body>
+</html>
